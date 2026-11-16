@@ -1,0 +1,274 @@
+```css
+/* =========================================================
+   SECTION ACTUALITÉS
+   ========================================================= */
+
+.news-list-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 45px 20px 70px;
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   TITRE
+   ========================================================= */
+
+.news-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+
+.news-toolbar h2 {
+    position: relative;
+    margin: 0;
+    padding-bottom: 12px;
+    color: #002b67;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.news-toolbar h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 55px;
+    height: 3px;
+    border-radius: 3px;
+    background: #ffd21c;
+}
+
+/* =========================================================
+   GRILLE DES ACTUALITÉS
+   ========================================================= */
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    width: 100%;
+}
+
+/* =========================================================
+   CARTE
+   ========================================================= */
+
+.news-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #e3e8ef;
+    border-radius: 10px;
+    box-shadow: 0 5px 18px rgba(0, 43, 103, 0.07);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 43, 103, 0.14);
+}
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.card-image {
+    position: relative;
+    width: 100%;
+    height: 210px;
+    overflow: hidden;
+    background: #eef2f6;
+}
+
+.card-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.news-card:hover .card-image img {
+    transform: scale(1.06);
+}
+
+/* =========================================================
+   CONTENU
+   ========================================================= */
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 22px 22px 20px;
+}
+
+.card-content h3 {
+    margin: 0 0 13px;
+    color: #002b67;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.45;
+
+    /*
+       Limite le titre à 2 lignes
+    */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.card-content p {
+    margin: 0 0 20px;
+    color: #687789;
+    font-size: 14px;
+    line-height: 1.7;
+
+    /*
+       Limite le texte à 3 lignes
+    */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+/* =========================================================
+   LIEN
+   ========================================================= */
+
+.card-link {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 5px;
+
+    color: #075bd3;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease,
+        gap 0.25s ease;
+}
+
+.card-link span {
+    font-size: 18px;
+    line-height: 1;
+    transition: transform 0.25s ease;
+}
+
+.card-link:hover {
+    color: #002b67;
+    gap: 11px;
+}
+
+.card-link:hover span {
+    transform: translateX(3px);
+}
+
+/* =========================================================
+   IMAGE NON DISPONIBLE
+   ========================================================= */
+
+.card-image.image-error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eef2f6;
+}
+
+.card-image.image-error::after {
+    content: "Image indisponible";
+    color: #7a8796;
+    font-size: 13px;
+}
+
+/* =========================================================
+   TABLETTE
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+    .news-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .card-image {
+        height: 200px;
+    }
+
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .news-list-section {
+        padding: 35px 15px 50px;
+    }
+
+    .news-toolbar {
+        margin-bottom: 22px;
+    }
+
+    .news-toolbar h2 {
+        font-size: 19px !important;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .card-image {
+        height: 215px;
+    }
+
+    .card-content {
+        padding: 20px;
+    }
+
+    .card-content h3 {
+        font-size: 17px;
+    }
+
+}
+
+/* =========================================================
+   PETIT MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .news-list-section {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .card-image {
+        height: 195px;
+    }
+
+    .card-content {
+        padding: 18px;
+    }
+
+}
+```

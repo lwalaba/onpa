@@ -1,0 +1,562 @@
+/* =========================================================
+   MENU PRINCIPAL ONPA
+   Desktop : horizontal
+   Mobile  : vertical
+========================================================= */
+
+.main-nav {
+    background: var(--onpa-blue-dark);
+    color: #ffffff;
+    position: relative;
+    z-index: 1000;
+}
+
+
+/* =========================================================
+   CONTENEUR
+========================================================= */
+
+.nav-container {
+    max-width: 1850px;
+    margin: 0 auto;
+    padding: 0 42px;
+
+    min-height: 70px;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   MENU HORIZONTAL DESKTOP
+========================================================= */
+
+.nav-menu {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+
+    gap: 5px;
+}
+
+
+/* =========================================================
+   ÉLÉMENT DU MENU
+========================================================= */
+
+.nav-item {
+    position: relative;
+
+    display: flex;
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   LIEN PRINCIPAL
+========================================================= */
+
+.nav-link {
+    min-height: 70px;
+
+    padding: 0 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    white-space: nowrap;
+    text-transform: uppercase;
+
+    transition: .25s;
+}
+
+
+.nav-link:hover {
+    color: var(--onpa-yellow);
+}
+
+
+.nav-link.active {
+    color: var(--onpa-yellow);
+}
+
+
+/* =========================================================
+   FLÈCHE
+========================================================= */
+
+.nav-arrow {
+    font-size: 12px;
+    transition: transform .25s;
+}
+
+
+.nav-item:hover .nav-arrow {
+    transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   SOUS-MENU DESKTOP
+========================================================= */
+
+.dropdown-menu {
+    position: absolute;
+
+    top: 70px;
+    left: 0;
+
+    min-width: 250px;
+
+    background: #ffffff;
+
+    border-top: 3px solid var(--onpa-yellow);
+
+    box-shadow:
+        0 15px 35px rgba(0, 43, 103, .18);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(8px);
+
+    transition: .22s;
+
+    z-index: 2000;
+}
+
+
+/* Ouverture au survol */
+
+.nav-item:hover > .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   LIENS DU SOUS-MENU
+========================================================= */
+
+.dropdown-link {
+    display: block;
+
+    padding: 13px 18px;
+
+    color: var(--onpa-text);
+
+    font-size: 13px;
+    font-weight: 500;
+
+    border-bottom: 1px solid #edf0f4;
+
+    transition: .2s;
+}
+
+
+.dropdown-link:last-child {
+    border-bottom: none;
+}
+
+
+.dropdown-link:hover {
+    background: var(--onpa-blue-soft);
+    color: var(--onpa-blue);
+}
+
+
+/* =========================================================
+   SOUS-MENUS IMBRIQUÉS
+   Exemple :
+   PÊCHE
+      └ Filières de pêche
+           └ Pêche industrielle
+========================================================= */
+
+.dropdown-submenu {
+    position: relative;
+}
+
+
+.dropdown-submenu > .dropdown-link {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+
+/* Flèche du sous-sous-menu */
+
+.submenu-arrow {
+    font-size: 10px;
+    transition: transform .2s;
+}
+
+
+/* =========================================================
+   SOUS-SOUS-MENU DESKTOP
+========================================================= */
+
+.dropdown-submenu-menu {
+    position: absolute;
+
+    top: -3px;
+    left: 100%;
+
+    min-width: 270px;
+
+    background: #ffffff;
+
+    border-top: 3px solid var(--onpa-yellow);
+
+    box-shadow:
+        0 15px 35px rgba(0, 43, 103, .18);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateX(8px);
+
+    transition: .22s;
+
+    z-index: 2100;
+}
+
+
+/* Ouverture au survol */
+
+.dropdown-submenu:hover > .dropdown-submenu-menu {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateX(0);
+}
+
+
+/* Rotation de la flèche */
+
+.dropdown-submenu:hover
+> .submenu-toggle
+> .submenu-arrow {
+
+    transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   BOUTON MENU MOBILE
+========================================================= */
+
+.mobile-menu-button {
+    display: none;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: var(--onpa-blue-dark);
+    color: #ffffff;
+
+    cursor: pointer;
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   TABLETTE
+========================================================= */
+
+@media (max-width: 1250px) {
+
+    .nav-container {
+        padding: 0 20px;
+    }
+
+    .nav-link {
+        padding: 0 9px;
+        font-size: 11px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* -----------------------------------------------------
+       BARRE DU MENU
+    ----------------------------------------------------- */
+
+    .main-nav {
+        min-height: 58px;
+    }
+
+
+    /* -----------------------------------------------------
+       CONTENEUR
+    ----------------------------------------------------- */
+
+    .nav-container {
+
+        min-height: 58px;
+
+        padding: 0 15px;
+
+        display: flex;
+
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+
+    /* -----------------------------------------------------
+       BOUTON ☰
+    ----------------------------------------------------- */
+
+    .mobile-menu-button {
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    /* -----------------------------------------------------
+       MENU VERTICAL
+    ----------------------------------------------------- */
+
+    .nav-menu {
+
+        position: absolute;
+
+        top: 58px;
+        left: 0;
+        right: 0;
+
+        display: none;
+
+        flex-direction: column;
+
+        width: 100%;
+
+        background: var(--onpa-blue-dark);
+
+        box-shadow:
+            0 15px 30px rgba(0,0,0,.20);
+
+        z-index: 9999;
+    }
+
+
+    /* Menu ouvert */
+
+    .nav-menu.open {
+        display: flex;
+    }
+
+
+    /* -----------------------------------------------------
+       ÉLÉMENTS
+    ----------------------------------------------------- */
+
+    .nav-item {
+
+        width: 100%;
+
+        display: block;
+
+        border-bottom:
+            1px solid rgba(255,255,255,.10);
+    }
+
+
+    /* -----------------------------------------------------
+       LIENS PRINCIPAUX
+    ----------------------------------------------------- */
+
+    .nav-link {
+
+        width: 100%;
+
+        min-height: 50px;
+
+        padding: 0 20px;
+
+        justify-content: space-between;
+
+        font-size: 12px;
+
+        white-space: normal;
+    }
+
+
+    /* -----------------------------------------------------
+       SOUS-MENU MOBILE
+    ----------------------------------------------------- */
+
+    .dropdown-menu {
+
+        position: static;
+
+        width: 100%;
+        min-width: 0;
+
+        display: none;
+
+        opacity: 1;
+        visibility: visible;
+
+        transform: none;
+
+        box-shadow: none;
+
+        border-top:
+            1px solid rgba(255,255,255,.10);
+
+        background: #012459;
+    }
+
+
+    /* Sous-menu ouvert */
+
+    .nav-item.submenu-open
+    > .dropdown-menu {
+
+        display: block;
+    }
+
+
+    /* Important :
+       désactive l'ouverture hover sur mobile */
+
+    .nav-item:hover
+    > .dropdown-menu {
+
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+
+    /* -----------------------------------------------------
+       LIENS DES SOUS-MENUS
+    ----------------------------------------------------- */
+
+    .dropdown-link {
+
+        padding: 12px 35px;
+
+        color: rgba(255,255,255,.85);
+
+        border-bottom:
+            1px solid rgba(255,255,255,.08);
+    }
+
+
+    .dropdown-link:hover {
+
+        background:
+            rgba(255,255,255,.06);
+
+        color: var(--onpa-yellow);
+    }
+
+
+    /* -----------------------------------------------------
+       SOUS-SOUS-MENU
+    ----------------------------------------------------- */
+
+    .dropdown-submenu {
+
+        position: static;
+    }
+
+
+    .dropdown-submenu
+    > .dropdown-link {
+
+        display: flex;
+
+        align-items: center;
+        justify-content: space-between;
+
+        padding-left: 50px;
+    }
+
+
+    .dropdown-submenu-menu {
+
+        position: static;
+
+        width: 100%;
+        min-width: 0;
+
+        display: none;
+
+        opacity: 1;
+        visibility: visible;
+
+        transform: none;
+
+        box-shadow: none;
+
+        border-top:
+            1px solid rgba(255,255,255,.08);
+
+        background: #001d4b;
+    }
+
+
+    /* Sous-sous-menu ouvert */
+
+    .dropdown-submenu.submenu-open
+    > .dropdown-submenu-menu {
+
+        display: block;
+    }
+
+
+    .dropdown-submenu-menu
+    .dropdown-link {
+
+        padding-left: 70px;
+
+        background: transparent;
+    }
+
+
+    /* Rotation de la flèche */
+
+    .dropdown-submenu.submenu-open
+    > .submenu-toggle
+    > .submenu-arrow {
+
+        transform: rotate(90deg);
+    }
+
+}

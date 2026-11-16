@@ -1,0 +1,710 @@
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root {
+
+    --blue-dark: #002b67;
+    --blue: #075bd3;
+    --blue-light: #eaf3ff;
+
+    --yellow: #ffd21c;
+
+    --text: #101828;
+    --text-light: #667085;
+
+    --white: #ffffff;
+
+    --border: #e6eaf0;
+
+    --shadow:
+        0 15px 40px rgba(0, 43, 103, 0.10);
+
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    font-family: "Poppins", sans-serif;
+
+    color: var(--text);
+
+    background: #ffffff;
+
+    line-height: 1.6;
+
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.news-hero {
+
+    min-height: 310px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    background:
+
+        linear-gradient(
+            100deg,
+            rgba(0,43,103,.96),
+            rgba(0,91,211,.82)
+        ),
+
+        url("assets/hero-3.jpg")
+        center / cover;
+
+    overflow: hidden;
+
+}
+
+.news-hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+
+    height: 350px;
+
+    border-radius: 50%;
+
+    border: 45px solid rgba(255,255,255,.07);
+
+    right: 8%;
+
+    top: -160px;
+
+}
+
+.news-hero-content {
+
+    max-width: 1400px;
+
+    width: 100%;
+
+    margin: auto;
+
+    padding: 60px 55px;
+
+    color: white;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+.breadcrumb {
+
+    display: flex;
+
+    gap: 10px;
+
+    font-size: 13px;
+
+    margin-bottom: 20px;
+
+    opacity: .9;
+
+}
+
+.breadcrumb a {
+
+    color: var(--yellow);
+
+}
+
+.news-hero h1 {
+
+    font-size: 54px;
+
+    font-weight: 800;
+
+    margin-bottom: 10px;
+
+}
+
+.news-hero p {
+
+    font-size: 18px;
+
+    max-width: 650px;
+
+    opacity: .9;
+
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.news-container {
+
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding: 75px 55px;
+
+}
+
+.section-label {
+
+    color: var(--blue);
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+.section-heading h2,
+.news-toolbar h2 {
+
+    font-size: 34px;
+
+    margin-top: 5px;
+
+}
+
+
+/* =====================================================
+   FEATURED
+===================================================== */
+
+.featured-section {
+
+    margin-bottom: 90px;
+
+}
+
+.featured-news {
+
+    margin-top: 30px;
+
+    display: grid;
+
+    grid-template-columns: 1.15fr 1fr;
+
+    background: white;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow);
+
+    border: 1px solid var(--border);
+
+}
+
+.featured-image {
+
+    position: relative;
+
+    min-height: 430px;
+
+}
+
+.featured-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+.featured-category {
+
+    position: absolute;
+
+    top: 25px;
+
+    left: 25px;
+
+    background: var(--yellow);
+
+    color: var(--blue-dark);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    padding: 8px 15px;
+
+    border-radius: 30px;
+
+}
+
+.featured-content {
+
+    padding: 55px;
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+}
+
+.news-date,
+.card-date {
+
+    color: var(--blue);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: .5px;
+
+    margin-bottom: 14px;
+
+}
+
+.featured-content h2 {
+
+    font-size: 32px;
+
+    line-height: 1.25;
+
+    margin-bottom: 20px;
+
+}
+
+.featured-content p {
+
+    color: var(--text-light);
+
+    font-size: 15px;
+
+    margin-bottom: 30px;
+
+}
+
+.read-more,
+.card-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: var(--blue);
+
+    font-weight: 700;
+
+    font-size: 14px;
+
+}
+
+.read-more span,
+.card-link span {
+
+    transition: .3s;
+
+}
+
+.read-more:hover span,
+.card-link:hover span {
+
+    transform: translateX(6px);
+
+}
+
+
+/* =====================================================
+   TOOLBAR
+===================================================== */
+
+.news-toolbar {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 30px;
+
+    margin-bottom: 35px;
+
+}
+
+.filters {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+}
+
+.filter {
+
+    border: 1px solid var(--border);
+
+    background: white;
+
+    color: var(--text-light);
+
+    padding: 10px 17px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition: .25s;
+
+}
+
+.filter:hover,
+.filter.active {
+
+    background: var(--blue-dark);
+
+    color: white;
+
+    border-color: var(--blue-dark);
+
+}
+
+
+/* =====================================================
+   NEWS GRID
+===================================================== */
+
+.news-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 28px;
+
+}
+
+.news-card {
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    transition: .3s;
+
+}
+
+.news-card:hover {
+
+    transform: translateY(-7px);
+
+    box-shadow: var(--shadow);
+
+}
+
+.card-image {
+
+    height: 230px;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+.card-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: .5s;
+
+}
+
+.news-card:hover .card-image img {
+
+    transform: scale(1.06);
+
+}
+
+.category {
+
+    position: absolute;
+
+    bottom: 15px;
+
+    left: 15px;
+
+    background: var(--blue-dark);
+
+    color: white;
+
+    padding: 7px 13px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+}
+
+.card-content {
+
+    padding: 25px;
+
+}
+
+.card-content h3 {
+
+    font-size: 18px;
+
+    line-height: 1.4;
+
+    margin-bottom: 12px;
+
+}
+
+.card-content p {
+
+    color: var(--text-light);
+
+    font-size: 13px;
+
+    margin-bottom: 22px;
+
+}
+
+
+/* =====================================================
+   PAGINATION
+===================================================== */
+
+.pagination {
+
+    margin-top: 55px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 8px;
+
+}
+
+.page {
+
+    width: 42px;
+
+    height: 42px;
+
+    border: 1px solid var(--border);
+
+    background: white;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-weight: 600;
+
+}
+
+.page:hover,
+.page.active {
+
+    background: var(--blue-dark);
+
+    color: white;
+
+    border-color: var(--blue-dark);
+
+}
+
+
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    
+
+    .brand-title {
+
+        font-size: 45px;
+
+    }
+
+    .brand-subtitle {
+
+        font-size: 15px;
+
+    }
+
+   
+
+    .featured-news {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .featured-image {
+
+        min-height: 350px;
+
+    }
+
+    .news-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+    .news-toolbar {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+    .footer-container {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+   
+    .news-hero {
+
+        min-height: 260px;
+
+    }
+
+    .news-hero-content {
+
+        padding: 45px 22px;
+
+    }
+
+    .news-hero h1 {
+
+        font-size: 38px;
+
+    }
+
+    .news-hero p {
+
+        font-size: 14px;
+
+    }
+
+    .news-container {
+
+        padding: 50px 20px;
+
+    }
+
+    .section-heading h2,
+    .news-toolbar h2 {
+
+        font-size: 27px;
+
+    }
+
+    .featured-content {
+
+        padding: 30px 25px;
+
+    }
+
+    .featured-content h2 {
+
+        font-size: 25px;
+
+    }
+
+    .featured-image {
+
+        min-height: 250px;
+
+    }
+
+    .news-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .card-image {
+
+        height: 220px;
+
+    }
+
+}
